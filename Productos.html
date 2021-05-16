@@ -1,0 +1,392 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+
+        <style>
+            #centrado{
+                text-align: center;
+                
+            }
+        </style>
+
+        <script>
+            $(document).ready(function () {
+
+                $("#btnIndicadores").click(function () {
+
+                    $.getJSON('https://mindicador.cl/api', function(data) {
+                            
+                            $("<p></p>", {
+                                
+                                html: '$'+Math.round(399990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p1");
+
+                            $("<p></p>", {
+                                
+                                html: '$'+Math.round(199990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p2");
+
+                            $("<p></p>", {
+                                
+                                html: '$'+Math.round(179990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p3");
+
+                            $("<p></p>", {
+                                
+                                html: '$'+Math.round(329990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p4");
+                                
+
+                                $("<p></p>", {
+                                
+                                html: '$'+Math.round(529990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p5");
+                                
+                                $("<p></p>", {
+                                
+                                html: '$'+Math.round(419990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p6");
+
+                                $("<p></p>", {
+                                
+                                html: '$'+Math.round(359990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p7");
+
+                                $("<p></p>", {
+                                
+                                html: '$'+Math.round(299990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p8");
+
+                                $("<p></p>", {
+                                
+                                html: '$'+Math.round(39990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p9");
+
+                                $("<p></p>", {
+                                
+                                html: '$'+Math.round(23990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p10");
+
+                                $("<p></p>", {
+                                
+                                html: '$'+Math.round(64990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p11");
+
+                                $("<p></p>", {
+                                
+                                html: '$'+Math.round(45990/data.dolar.valor)+' dolares'
+                                                 
+                                }).appendTo("#p12");
+
+                                
+                                }).fail(function() {
+                                        console.log('Error al consumir la API!');
+                                });
+                                return false;
+                            
+                           
+                        
+                })
+                
+            })
+
+        </script>
+
+    </head>
+
+    <body>
+        <navbar  class="navbar navbar-expand-lg navbar-dark bg-primary col-12">
+            <a class="navbar-brand" href="#" >TECNO_LAB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"  >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">INICIO <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Productos.html">PRODUCTOS</a>
+                    </li>
+    
+                </ul>
+
+                <ul class="navbar-nav navbar-right">
+                        
+                    <li class="nav-item">
+                        <a class="nav-link" href="Formulario.html" ><span class="glyphicon glyphicon-user" ></span> <strong>REGISTRO</strong></a>
+                    </li>
+
+
+                    
+                </ul>
+    
+            </div>    
+    
+        </navbar>
+        
+        <div class="container" id="centrado" >
+            <div >
+                <h1 id="centrado" style="border: 2px solid gray; " class="card bg-light " >NUESTROS PRODUCTOS</h1>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-10 col-8">
+
+                </div>
+
+                <div class="col-sm-2 col-4">
+
+                    <a type="button" class="btn bg-primary"  
+                        id="btnIndicadores" >Convertir a dolar $</a>
+
+                </div>
+
+            </div>
+           
+                  
+
+           
+            
+           
+            <br>
+            <h2 style="border: 1px solid black; " class="card bg-light">GPUs</h2>
+            <div class="row justify-content-center rounded-sm" style="border: 1px solid black;">
+                <span class="rounded-sm"></span>
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid gray;" class="card bg-light">Msi</p>
+                    <p> GPU Geoforce 6GB GTX 1660</p>
+                    <img src="GPU6.jfif" alt="GPU1" width="200" height="200">
+                    <h4 id="producto1" ><strong>$399.990 !!</strong></h4>
+                    <h4 id="p1"></h4>
+                    <p>Stock: 4 Unid.</p>
+                    <div class="row justify-content-center rounded-sm">
+                        <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                        
+                        
+                        
+
+                    </div>
+                    
+                </div>
+                <div class="col" style="border: 1px solid #4169e1;">
+                    <p style="border: 1px solid black;" class="card bg-light">Asus</p>
+                    <p>Tarjeta de video Geoforce RTX Rog Strike 4GB</p> 
+                    <img src="GPU2.jpg" alt="GPU1" width="200" height="180">
+                    <h4 id="producto2"><strong>$199.990 !!</strong></h4>
+                    <h4 id="p2"></h4>
+                    <p>Stock 3 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                </div>
+                <div class="col" style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light">gigabyte</p>
+                    <p>Tarjeta de video Geoforce GTX 1070 4GB</p>
+                    <img src="GPU3.jpg" alt="GPU1" width="200" height="180">
+                    <h4 id="producto3"><strong>$179.990 !!</strong></h4>
+                    <h4 id="p3"></h4>
+                    <p>Stock 9 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                    
+                </div>
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light">Asus</p>
+                    <p>Tarjeta de video Nvidia GTX 2100ti 6GB</p>
+                    <img src="GPU4.png" alt="GPU1" width="200" height="200">
+                    <h4 id="prducto4"><strong>$329.990 !!</strong></h4>
+                    <h4 id="p4"></h4>
+                    <p>Stock 14 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                </div>
+
+                
+            </div>
+             
+            <br>
+            <h2 style="border: 1px solid black;" class="card bg-light">Procesadores</h2>
+            <div class="row justify-content-center" style="border: solid black;">
+
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light">Intel</p>
+                    <p>Procesador Intel Core I9 10th generacion 4.5Ghz</p>
+                    <img src="CPU1.jfif" alt="GPU1" width="200" height="200">
+                    <h4 id="prducto5"><strong>$529.990 !!</strong></h4>
+                    <h4 id="p5"></h4>
+                    <p>Stock 19 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                    
+                </div>
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light"> Intel</p>
+                    <p>Procesador Intel Core I7 10th generacion 3.8Ghz</p>
+                    <img src="CPU2.jfif" alt="GPU1" width="200" height="200">
+                    <h4 id="prducto6"><strong>$419.990 !!</strong></h4>
+                    <h4 id="p6"></h4>
+                    <p>Stock 17 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                </div>
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light">Intel</p>
+                    <p>Procesador Intel Core I5 10th generacion 3.5Ghz</p>
+                    <img src="CPU3.jfif" alt="GPU1" width="200" height="200">
+                    <h4 id="prducto7"><strong>$359.990 !!</strong></h4>
+                    <h4 id="p7"></h4>
+                    <p>Stock 24 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                </div>
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light">Intel</p>
+                    <p>Procesador Intel Core I3 10th generacion 3.0Ghz</p>
+                    <img src="CPU4.jfif" alt="GPU1" width="200" height="200">
+                    <h4 id="prducto8"><strong>$299.990 !!</strong></h4>
+                    <h4 id="p8"></h4>
+                    <p>Stock 34 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                </div>
+                
+                
+                
+                
+
+
+            </div>
+            <br>
+            <h2 style="border: 1px solid black;" class="card bg-light">Memoria Ram</h2>
+            <div class="row justify-content-center" style="border: solid black;">
+
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light">Dell</p>
+                    <p>Ram Dell DDR3 4GB 2144Mhz </p>
+                    <img src="ram1.jfif" alt="GPU1" width="200" height="200">
+                    <h4 id="prducto9"><strong>$39.990 !!</strong></h4>
+                    <h4 id="p9"></h4>
+                    <p>Stock 59 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                    
+                </div>
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light">Dell</p>
+                    <p>Ram Dell DDR3 2GB 1600Mhz </p>
+                    <img src="ram2.jfif" alt="GPU1" width="200" height="200">
+                    <h4 id="prducto10"><strong>$23.990 !!</strong></h4>
+                    <h4 id="p10"></h4>
+                    <p>Stock 75 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                    
+                </div>
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light">Crucial</p>
+                    <p>Ram Crucial DDR4 8GB 2666Mhz </p>
+                    <img src="ram3.jfif" alt="GPU1" width="200" height="200">
+                    <h4 id="prducto11"><strong>$64.990 !!</strong></h4>
+                    <h4 id="p11"></h4>
+                    <p>Stock 14 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                </div>
+                <div class="col " style="border: 1px solid #4169e1;"> 
+                    <p style="border: 1px solid black;" class="card bg-light">Kingston</p>
+                    <p>Ram Kingston DDR3 4GB 2400Mhz </p>
+                    <img src="ram4.jfif" alt="GPU1" width="200" height="200">
+                    <h4 id="prducto12"><strong>$45.990 !!</strong></h4>
+                    <h4 id="p12"></h4>
+                    <p>Stock 38 Unid.</p>
+                    <a type="button" href="#" class="btn bg-primary" style="margin: auto;">AGREGAR</a>
+                </div>
+                
+           
+
+
+            </div>
+
+            
+
+
+
+        </div>
+        <br>
+        <navbar  class="container-fluid navbar navbar-expand-lg navbar-dark bg-primary">
+            
+    
+            <div class="row collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto col-sm-3 col-3">
+                    
+                    <li class="nav-item active" >
+                        <p>NUESTRAS REDES: </p>
+                        <img src="iconoWatsap2.png" alt="sccs" style="width: 15%;"> whatsapp: +569 57611557
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav mr-auto col-sm-2 col-3">
+                    
+                    <li class="nav-item active" >
+                        <a class="nav-link" href="#"> <img src="Instagram-logo.png" alt="sccs" style="width: 20%; margin: 6%;">Instagram</a>
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav mr-auto col-sm-2 col-3">
+                    
+                    <li class="nav-item active" >
+                        <a class="nav-link" href="#"> <img src="iconoFacebook.jfif" alt="sccs" style="width: 20%; margin: 6%;">Facebook</a>
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav mr-auto col-sm-2 col-3">
+                    
+                    <li class="nav-item active" >
+                        <a class="nav-link" href="#"> <img src="iconoTwiter.png" alt="sccs" style="width: 20%; margin: 6%;">Twitter</a>
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav mr-auto col-sm-2 col-3">
+                    
+                    <li class="nav-item active" >
+                        <p style="margin: 6%;">
+                            NUESTRA TIENDA: 
+                            Teatinos 348, Santiago
+                            tecno_lab12345@contacto.class
+                        </p>
+                    </li>
+
+                </ul>
+                
+            </div>    
+    
+        </navbar>
+
+    </body>
+
+
+
+
+
+
+
+</html>
