@@ -9,7 +9,142 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+        <script>
+            $(function() {
+                $('.btnGuardar').click(function() {
+                    if($('.txtRut').val() == "")
+                                    {
+                                            alert("No especificó el Rut");
+                                            $('.txtRut').focus();
+                                            return false;
+                                    }
+                    else if($('.txtNombre').val() == "")
+                                    {
+                                            alert("No especificó el nombre");
+                                            $('.txtNombre').focus();
+                                            return false;
+                                    }                                               
+                    else if($('.txtApellido').val() == "")
+                                    {
+                                            alert("No especificó el apellido");
+                                            $('.txtApellido').focus();
+                                            return false;
+                                    }                                             
+                    
+                    else if($('.txtCorreo').val() == "")
+                    {
+                            alert("No especifico el email");
+                            $('.txtCorreo').focus();
+                            return false;
+                    }
+                    else if($('.txtFechaNac').val() == "")
+                                    {
+                                            alert("No especificó una fecha de nacimiento");
+                                            $('.txtFechaNac').focus();
+                                            return false;
+                                    }
+                    else if($('.txtTelefono').val() == "")
+                                    {
+                                            alert("No especificó el telefono");
+                                            $('.txtTelefono').focus();
+                                            return false;
+                                    }
+                    else if($('.txtPais').val() == "Seleccione un pais")
+                                    {
+                                            alert("No Seleccionó un pais");
+                                            $('.txtPais').focus();
+                                            return false;
+                                    }
+                    else if($('.txtNivelEd').val() == "Seleccione un nivel educacional")
+                                    {
+                                            alert("No Seleccionó un nivel educacional");
+                                            $('.txtNivelEd').focus();
+                                            return false;
+                                    }
+                    
+                    else if($('.txtRut').val().length  < 9)
+                            {        
+                                    alert("Faltan caracteres en el rut");
+                                    $('.txtRut').focus();
+                                    return false;
+                            }
+                    else if($('.txtRut').val() != "")
+                    {
+                            let emailRegex = /^[0-9]+\-([Kk0-9]{1})$/
+                            if(!emailRegex.test($('.txtRut').val()))
+                            {        
+                                    alert("no coincide con el formato del rut");
+                                    $('.txtRut').focus();
+                                    return false;
+                            }
+                                                    
+                    }
+                    else if($('.txtCorreo').val() != "")
+                    {
+                            let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/
+                            if(!emailRegex.test($('.txtCorreo').val()))
+                            {        
+                                    alert("no coincide con el formato del correo");
+                                    $('.txtCorreo').focus();
+                                    return false;
+                            }
+                                                    
+                    }
+                                                                   
+                                    alert("Los datos son: \n" + 
+                                                    "Rut                 :" + $('.txtRut').val() + "\n" +
+                                                    "Nombre              :" + $('.txtNombre').val() + "\n" +
+                                                    "Apellido            :" + $('.txtApellido').val() + "\n" +
+                                                    "Correo              :" + $('.txtCorreo').val() + "\n"  +
+                                                    "Fecha de nacimiento :" + $('.txtFechaNac').val() + "\n"  +
+                                                    "Telefono            :" + $('.txtTelefono').val() + "\n" +
+                                                    "Pais                :" + $('.txtPais').val() + "\n"   +
+                                                    "Nivel educacional   :" + $('.txtNivelEd').val() + "\n"                              
+                                                    );
+                                    
+                                    
+                                    return false;
+                })
+                            
+                            var letras = 'qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMáéíóúÁÉÍÓÚ ';
+                            var numeros= '1234567890';
+                            var rut= '1234567890-kK';
+                            var email= '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@_-.';
+                            
+                            $('.txtNombre, .txtApellido').keypress(function(e)
+                            {
+                                    let caracter = String.fromCharCode(e.which);
+                                    
+                                    if(letras.indexOf(caracter) < 0)
+                                            return false;
+                            })
+                            $('.txtTelefono').keypress(function(e)
+                            {
+                                    let caracter = String.fromCharCode(e.which);
+                                    
+                                    if(numeros.indexOf(caracter) < 0)
+                                            return false;
+                            })
+                            $('.txtRut').keypress(function(e)
+                            {
+                                    let caracter = String.fromCharCode(e.which);
+                                    
+                                    if(rut.indexOf(caracter) < 0)
+                                            return false;
+                            })
+                            $('.txtCorreo').keypress(function(e)
+                            {
+                                    let caracter = String.fromCharCode(e.which);
+                                    
+                                    if(email.indexOf(caracter) < 0)
+                                            return false;
+                            })
+    
+    
+    
+    
+            });
+        </script>
        <style>
            #centrado{
                text-align: center;
@@ -30,6 +165,9 @@
     </head>
     
     <body>
+
+
+        
         <navbar  class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#" >TECNO_LAB</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"  >
@@ -67,7 +205,7 @@
             <div class="row">
                 <div class="form-group" style="width: 50%; margin: auto;">
                     <label for="usr">RUT: </label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="text" name="txtRut" maxlength="10" class="txtRut form-control" id="usr">
     
                 </div>
             </div>
@@ -75,7 +213,7 @@
             <div class="row">
                 <div class="form-group" style="width: 50%; margin: auto;">
                     <label for="usr">NOMBRE: </label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="text" name="txtNombre" maxlength="30" class="txtNombre form-control" id="usr">
     
                 </div>
 
@@ -84,7 +222,7 @@
             <div class="row">
                 <div class="form-group" style="width: 50%; margin: auto;">
                     <label for="usr">APELLIDO: </label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="text" name="txtApellido" maxlength="30" class="txtApellido form-control" id="usr">
     
                 </div>
 
@@ -93,7 +231,7 @@
             <div class="row">
                 <div class="form-group" style="width: 50%; margin: auto;">
                     <label for="usr">CORREO: </label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="email" name="txtCorreo" maxlength="50" class="txtCorreo form-control" id="usr">
     
                 </div>
 
@@ -102,7 +240,7 @@
             <div class="row">
                 <div class="form-group" style="width: 50%; margin: auto;">
                     <label for="usr">FECHA NACIMIENTO: </label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="date" name="txtFechaNac" class="txtFechaNac form-control" id="usr">
     
                 </div>
 
@@ -111,34 +249,36 @@
             <div class="row">
                 <div class="form-group" style="width: 50%; margin: auto;">
                     <label for="usr">TELEFONO: </label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="text" name="txtTelefono" maxlength="11" class="txtTelefono form-control" id="usr">
     
                 </div>
 
             </div>
             <br>
-            <p><strong>REGION:</strong></p>
+            <p><strong>PAÍS:</strong></p>
             <form style="width: 60%; margin: auto;">
-                <select name="cars" class="custom-select">
-                  <option selected>Seleccione una region</option>
-                  <option value="volvo">Región de Arica y Parinacota</option>
-                  <option value="fiat">Región de Tarapacá</option>
-                  <option value="audi">Región de Antofagasta</option>
-                  <option value="audi">Región de Atacama</option>
-                  <option value="audi">Región de Coquimbo</option>
-                  <option value="audi">Región de Valparaíso</option>
-                  <option value="audi">Región Metropolitana de Santiago</option>
-                  <option value="audi">Región del Libertador General Bernardo O’Higgins</option>
-                  <option value="audi">Región del Maule</option>
-                  <option value="audi">Región del Ñuble</option>
-                  <option value="audi">Región del Biobío</option>
-                  <option value="audi">Región de La Araucanía</option>
-                  <option value="audi">Región de Los Ríos</option>
-                  <option value="audi">Región de Los Lagos</option>
-                  <option value="audi">Región de Aysén del General Carlos Ibáñez del Campo</option>
-                  <option value="audi">Región de Magallanes y la Antártica Chilena</option>
-
-                  
+                <select name="txtPais" class="txtPais custom-select">
+                  <option selected>Seleccione un país</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Bolivia">Bolivia</option>
+                  <option value="Brasil">Brasil</option>
+                  <option value="Chile">Chile</option>
+                  <option value="Colombia">Colombia</option>
+                  <option value="Costa Rica">Costa Rica</option>
+                  <option value="Cuba">Cuba</option>
+                  <option value="Ecuador">Ecuador</option>
+                  <option value="El Salvador">El Salvador</option>
+                  <option value="Guatemala">Guatemala</option>
+                  <option value="Honduras">Honduras</option>
+                  <option value="México">México</option>
+                  <option value="Nicaragua">Nicaragua</option>
+                  <option value="Panamá">Panamá</option>
+                  <option value="Paraguay">Paraguay</option>
+                  <option value="Perú">Perú</option>
+                  <option value="Puerto Rico">Puerto Rico</option>
+                  <option value="República Dominicana">República Dominicana</option>
+                  <option value="Uruguay y Venezuela">Uruguay y Venezuela</option> 
+                
                 </select>
               </form>
 
@@ -146,21 +286,21 @@
 
             <p><strong>NIVEL EDUCACIONAL:</strong></p>
             <form style="width: 50%; margin: auto;">
-                <select name="cars" class="custom-select">
+                <select name="txtNivelEd" class="txtNivelEd custom-select">
                   <option selected>Seleccione un nivel educacional</option>
-                  <option value="volvo">Doctor</option>
-                  <option value="fiat">Magister</option>
-                  <option value="audi">Profesional</option>
-                  <option value="audi">Educacion Media</option>
-                  <option value="audi">Educacion Basica</option>
-                  <option value="audi">Otra</option>
+                  <option value="Doctor">Doctor</option>
+                  <option value="Magister">Magister</option>
+                  <option value="Profesional">Profesional</option>
+                  <option value="Educacion Media">Educacion Media</option>
+                  <option value="Educacion Basica">Educacion Basica</option>
+                  <option value="Otra">Otra</option>
                   
                 </select>
               </form>
 
             <br>
             <div class="row">
-                <a type="button" href="index.html" class="btn btn-success" style="margin: auto;">GUARDAR</a>
+                <a type="button" name="btnGuardar" class="btnGuardar btn btn-success" style="margin: auto;">GUARDAR</a>
 
             </div>
             <br>
@@ -244,4 +384,3 @@
 
 
 </html>
-
